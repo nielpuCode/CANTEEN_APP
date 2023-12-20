@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_beige_main"
+    tools:context=".Fragment_Menu_Buyer">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_beige_main">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_beige_main"
+            android:orientation="vertical">
+
+            <!-- Item Menu Tiap Linear Layout, Nanti tinggal di tambah aja -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="203dp"
+                android:orientation="horizontal"
+                android:background="@color/light_beige_main"
+                android:layout_marginBottom="10dp"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@raw/nasi_goreng" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="232dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nasi Goreng"
+                        android:textColor="@android:color/black"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Rp15.000"
+                        android:textColor="@color/dark_red_main"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Opsi pedas atau tidak -->
+                    <RadioGroup
+                        android:id="@+id/radioGroupSpicy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="33dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioSpicy"
+                            android:layout_width="109dp"
+                            android:layout_height="match_parent"
+                            android:buttonTint="@android:color/black"
+                            android:text="Spicy"
+                            android:textColor="@color/black"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/radioNotSpicy"
+                            android:layout_width="109dp"
+                            android:layout_height="match_parent"
+                            android:buttonTint="@android:color/black"
+                            android:text="Not Spicy"
+                            android:textColor="@color/black"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+
+                    <!-- Tombol "add" -->
+                    <Button
+                        android:id="@+id/btnAdd"
+                        android:layout_width="158dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="onAddButtonClick"
+                        android:text="Add"
+                        android:backgroundTint="@color/dark_beige_main"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
