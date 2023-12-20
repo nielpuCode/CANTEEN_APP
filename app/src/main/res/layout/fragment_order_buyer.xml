@@ -93,7 +93,7 @@
 
                         <Button
                             android:id="@+id/cancelButton"
-                            style="@style/RoundedButton"
+                            android:backgroundTint="@color/dark_beige_main"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:onClick="onAddButtonClick"
@@ -169,7 +169,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Status: Ready to pick"
-                        android:textColor="@color/dark_red_main"
+                        android:textColor="@color/green"
                         android:textSize="16sp"
                         android:textStyle="italic" />
 
@@ -184,7 +184,7 @@
                             android:id="@+id/readyButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@null"
+                            android:backgroundTint="@color/dark_beige_main"
                             android:onClick="onAddButtonClick"
                             android:text="Done"
                             android:textStyle="bold" />
