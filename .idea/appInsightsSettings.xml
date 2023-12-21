@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.canteen_app" />
+                  <option name="mobileSdkAppId" value="1:759868445198:android:29dd28fad4d4d9be4b225f" />
+                  <option name="projectId" value="canteen-6eb09" />
+                  <option name="projectNumber" value="759868445198" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
