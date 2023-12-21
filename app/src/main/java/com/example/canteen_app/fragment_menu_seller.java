@@ -1,9 +1,19 @@
 package com.example.canteen_app;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultCaller;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +21,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,18 +83,6 @@ public class fragment_menu_seller extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_menu_seller, container, false);
-
-        ImageView uploadImage=view.findViewById(R.id.uploadImg);
-        Button saveButton = view.findViewById(R.id.saveButton);
-        EditText uploadFoodName=view.findViewById(R.id.foodNameEditText),
-                uploadFoodPrice=view.findViewById(R.id.foodPriceEditText),
-                uploadVariant1 = view.findViewById(R.id.variant1EditText),
-                uploadVariant2 = view.findViewById(R.id.variant2EditText);
-        String imageURL;
-        Uri uri;
-
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menu_seller, container, false);
     }
