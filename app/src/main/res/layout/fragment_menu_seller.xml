@@ -52,10 +52,11 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/foodImageView"
+                            android:id="@+id/uploadImg"
                             android:layout_width="match_parent"
                             android:layout_height="180dp"
-                            android:src="@raw/nasi_goreng" />
+                            android:scaleType="fitXY"
+                            android:src="@raw/nasi_goreng"/>
 
                         <!-- Ini button buat ngetrigger si seller bisa milih gambar dari
                         galeri HP mereka-->
@@ -69,62 +70,73 @@
                             android:paddingHorizontal="15dp"
                             android:backgroundTint="@color/dark_beige_main"
                             android:onClick="onSaveButtonClick"
-                            android:text="Select Image"
+                            android:text="SELECT IMAGE"
                             android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="270dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                        <EditText
+                            android:id="@+id/foodNameEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:hint="Food Name"
+                            android:padding="5dp"/>
 
-                            <EditText
-                                android:id="@+id/foodNameEditText"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Food Name"
-                                android:minHeight="48dp"
-                                android:text="Nasi Goreng"
-                                android:textColor="@color/black"
-                                android:textColorHint="@color/black" />
+                        <EditText
+                            android:id="@+id/foodPriceEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:hint="Food Price"
+                            android:padding="5dp"/>
 
-                            <EditText
-                                android:id="@+id/foodPriceEditText"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Food Price"
-                                android:minHeight="48dp"
-                                android:text="15000"
-                                android:textColor="@color/black"
-                                android:textColorHint="@color/black" />
+                        <EditText
+                            android:id="@+id/variant1EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:hint="Variant_1"
+                            android:padding="5dp"/>
 
-                            <EditText
-                                android:id="@+id/variant1EditText"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Variant-1"
-                                android:minHeight="48dp"
-                                android:text="Spicy"
-                                android:textColor="@color/black"
-                                android:textColorHint="@color/black" />
+                        <EditText
+                            android:id="@+id/variant2EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:hint="Variant_2"
+                            android:padding="5dp"/>
 
-                            <EditText
-                                android:id="@+id/variant2EditText"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Variant_2"
-                                android:minHeight="48dp"
-                                android:text="Not Spicy"
-                                android:textColor="@color/black"
-                                android:textColorHint="@color/black" />
-                        </LinearLayout>
+<!--                        <EditText-->
+<!--                            android:id="@+id/"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint=""-->
+<!--                            android:minHeight="48dp"-->
+<!--                            android:text="15000"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textColorHint="@color/black" />-->
 
-                    </LinearLayout>
+<!--                        <EditText-->
+<!--                            android:id="@+id/variant1EditText"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="Variant-1"-->
+<!--                            android:minHeight="48dp"-->
+<!--                            android:text="Spicy"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textColorHint="@color/black" />-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/variant2EditText"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="Variant_2"-->
+<!--                            android:minHeight="48dp"-->
+<!--                            android:text="Not Spicy"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textColorHint="@color/black" />-->
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -132,20 +144,20 @@
                             android:orientation="horizontal">
 
                             <Button
-                                style="@style/Widget.Material3.Button"
-                                android:textSize="17dp"
                                 android:id="@+id/saveButton"
+                                android:textSize="17dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="4dp"
                                 android:backgroundTint="@color/dark_beige_main"
                                 android:onClick="onSaveButtonClick"
                                 android:text="SAVE"
+                                style="@style/Widget.Material3.Button"
                                 android:textStyle="bold" />
 
                             <Button
                                 style="@style/Widget.Material3.Button"
-                                android:textSize="15dp"
+                                android:textSize="17dp"
                                 android:id="@+id/deleteButton"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -154,8 +166,8 @@
                                 android:onClick="onDeleteButtonClick"
                                 android:text="DELETE"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

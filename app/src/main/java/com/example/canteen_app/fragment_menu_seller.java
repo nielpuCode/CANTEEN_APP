@@ -1,5 +1,6 @@
 package com.example.canteen_app;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,9 +59,22 @@ public class fragment_menu_seller extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_menu_seller, container, false);
+
+        ImageView uploadImage=view.findViewById(R.id.uploadImg);
+        Button saveButton = view.findViewById(R.id.saveButton);
+        EditText uploadFoodName=view.findViewById(R.id.foodNameEditText),
+                uploadFoodPrice=view.findViewById(R.id.foodPriceEditText),
+                uploadVariant1 = view.findViewById(R.id.variant1EditText),
+                uploadVariant2 = view.findViewById(R.id.variant2EditText);
+        String imageURL;
+        Uri uri;
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menu_seller, container, false);
     }
