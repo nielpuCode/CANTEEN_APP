@@ -59,10 +59,12 @@ public class MainActivity extends AppCompatActivity {
                                 SignInMethodQueryResult result = task.getResult();
                                 if (result != null && result.getSignInMethods() != null && result.getSignInMethods().size() > 0) {
                                     // User already exists, attempt to sign in
+                                    Log.d("SignInDebug", "User exists, attempting to sign in");
                                     signInUser(email, password);
                                 } else {
                                     // User does not exist, create a new account and sign in
-                                    registerUser(email, password);
+                                    Log.d("SignInDebug", "User does not exist, creating a new account");
+                                    registerOrSignInUser(email, password);
                                 }
                             } else {
                                 // Handle the exception
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     } else if (TextUtils.isEmpty(password)) {
                         Toast.makeText(MainActivity.this, "Password must not be empty", Toast.LENGTH_LONG).show();
                     } else{
-                        registerUser(email, password);
+                        registerOrSignInUser(email, password);
 
                         // Move the intent inside the successful registration block
                         // When this button is clicked, it will move into the next page
@@ -103,6 +105,24 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // checks if user's accoutn is not yet registered, the user's account will be registered and the user is directed to the main menu
+    private void registerOrSignInUser(String email, String password) {
+        auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(MainActivity.this, "Successfully Registered and Logged In", Toast.LENGTH_SHORT).show();
+                            navigateToBuyerPage();
+                        } else {
+                            // If the registration fails, try signing in (assuming the email is already registered)
+                            signInUser(email, password);
+                        }
+                    }
+                });
+    }
+
+    // checks if user's accoutn is already registered, the userr will be directed to the main menu
     private void signInUser(String email, String password) {
         auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -113,23 +133,6 @@ public class MainActivity extends AppCompatActivity {
                             navigateToBuyerPage();
                         } else {
                             Toast.makeText(MainActivity.this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            // Log the exception for debugging
-                            Log.e("SignInError", "Error signing in: " + task.getException().getMessage());
-                        }
-                    }
-                });
-    }
-
-    private void registerUser(String email, String password) {
-        auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(MainActivity.this, "Successfully Registered and Logged In", Toast.LENGTH_SHORT).show();
-                            navigateToBuyerPage();
-                        } else {
-                            Toast.makeText(MainActivity.this, "Registration Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
