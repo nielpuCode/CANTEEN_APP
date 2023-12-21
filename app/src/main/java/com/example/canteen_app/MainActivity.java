@@ -66,18 +66,23 @@ public class MainActivity extends AppCompatActivity {
                 String email = usEmail.getText().toString();
                 String password = usPassword.getText().toString();
 
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(MainActivity.this, "Email must not be empty", Toast.LENGTH_LONG).show();
-                } else if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(MainActivity.this, "Password must not be empty", Toast.LENGTH_LONG).show();
-                } else {
-                    registerUser(email, password);
+                if (email.equals("mamankcilok.cashier@gmail.com") || password.equals("mamankcilok")){
+                    if (TextUtils.isEmpty(email)) {
+                        Toast.makeText(MainActivity.this, "Email must not be empty", Toast.LENGTH_LONG).show();
+                    } else if (TextUtils.isEmpty(password)) {
+                        Toast.makeText(MainActivity.this, "Password must not be empty", Toast.LENGTH_LONG).show();
+                    } else{
+                        registerUser(email, password);
 
-                    // Move the intent inside the successful registration block
-                    // When this button is clicked, it will move into the next page
-                    Intent intent = new Intent(MainActivity.this, Seller_Page.class);
-                    startActivity(intent);
+                        // Move the intent inside the successful registration block
+                        // When this button is clicked, it will move into the next page
+                        Intent intent = new Intent(MainActivity.this, Seller_Page.class);
+                        startActivity(intent);
+                    }
                 }
+                else
+                    Toast.makeText(MainActivity.this, "U have not been registered as employee by the company", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
