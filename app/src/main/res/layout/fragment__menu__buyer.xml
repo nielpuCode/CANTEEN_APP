@@ -85,6 +85,8 @@
 
                     <!-- Tombol "add" -->
                     <Button
+                        style="@style/Widget.Material3.Button"
+                        android:textSize="17dp"
                         android:id="@+id/btnAdd"
                         android:layout_width="158dp"
                         android:layout_height="wrap_content"

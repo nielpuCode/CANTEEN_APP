@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_beige_main"
+    android:background="@color/dark_beige_main"
     tools:context=".fragment_order_seller">
 
     <ScrollView
@@ -20,6 +20,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/light_beige_main"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -73,6 +75,36 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="">
+
+                        <TextView
+                            android:id="@+id/orderNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Order Number: 1"
+                            android:textStyle="bold"
+                            android:layout_marginHorizontal="4dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/orderNumber2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UNPAID"
+                            android:textStyle="bold"
+                            android:background="@color/dark_red_main"
+                            android:padding="5dp"
+                            android:textColor="@color/white"
+                            android:layout_marginHorizontal="4dp"
+                            />
+
+                    </LinearLayout>
+
                     <!-- This is for status text later on -->
                     <TextView
                         android:id="@+id/statusTextView"
@@ -92,36 +124,37 @@
                         android:gravity="center_vertical|center_horizontal">
 
                         <Button
-                            style="@style/RoundedButton"
+                            style="@style/Widget.Material3.Button"
+                            android:textSize="17dp"
                             android:id="@+id/readyButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@null"
                             android:onClick="onAddButtonClick"
                             android:text="Ready"
+                            android:backgroundTint="@color/dark_beige_main"
                             android:layout_marginHorizontal="10dp"
                             android:textStyle="bold" />
 
                         <Button
-                            style="@style/RoundedButton"
+                            style="@style/Widget.Material3.Button"
+                            android:textSize="17dp"
                             android:id="@+id/cancelButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@null"
                             android:onClick="onAddButtonClick"
                             android:layout_marginHorizontal="10dp"
                             android:text="Cancel"
+                            android:backgroundTint="@color/dark_red_main"
                             android:textStyle="bold" />
                     </LinearLayout>
-
-
-
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/light_beige_main"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -175,6 +208,36 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="">
+
+                        <TextView
+                            android:id="@+id/orderNumber3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Order Number: 3"
+                            android:textStyle="bold"
+                            android:layout_marginHorizontal="4dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/paymentStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UNPAID"
+                            android:textStyle="bold"
+                            android:background="@color/dark_red_main"
+                            android:padding="5dp"
+                            android:textColor="@color/white"
+                            android:layout_marginHorizontal="4dp"
+                            />
+
+                    </LinearLayout>
+
                     <!-- This is for status text later on -->
                     <TextView
                         android:id="@+id/statusTextView2"
@@ -182,7 +245,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Status: Ready to pick"
-                        android:textColor="@color/dark_red_main"
+                        android:textColor="@color/green"
                         android:textSize="16sp"
                         android:textStyle="italic" />
 
@@ -193,17 +256,30 @@
                         android:layout_marginTop="12dp"
                         android:gravity="center_vertical|center_horizontal">
 
-<!--                        Jadi set di logicnya kalo Statusnya udh Ready button Readynya ilangin-->
+<!-- Jadi set di logicnya kalo Statusnya udh Ready button Readynya ilangin-->
 
                         <Button
-                            style="@style/RoundedButton"
+                            style="@style/Widget.Material3.Button"
+                            android:textSize="17dp"
+                            android:id="@+id/paidButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:backgroundTint="@color/green"
+                            android:onClick="onAddButtonClick"
+                            android:text="PAID"
+                            android:textStyle="bold" />
+
+                        <Button
+                            style="@style/Widget.Material3.Button"
+                            android:textSize="17dp"
                             android:id="@+id/cancelButton2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@null"
                             android:onClick="onAddButtonClick"
                             android:layout_marginHorizontal="10dp"
                             android:text="Cancel"
+                            android:backgroundTint="@color/dark_red_main"
                             android:textStyle="bold" />
                     </LinearLayout>
 

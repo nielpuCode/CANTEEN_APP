@@ -53,6 +53,8 @@
                         <!-- Ini button buat ngetrigger si seller bisa milih gambar dari
                         galeri HP mereka-->
                         <Button
+                            style="@style/Widget.Material3.Button"
+                            android:textSize="17dp"
                             android:id="@+id/btnSelectImage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -122,6 +124,8 @@
                             android:orientation="vertical">
 
                             <Button
+                                style="@style/Widget.Material3.Button"
+                                android:textSize="17dp"
                                 android:id="@+id/saveButton"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -132,6 +136,8 @@
                                 android:textStyle="bold" />
 
                             <Button
+                                style="@style/Widget.Material3.Button"
+                                android:textSize="15dp"
                                 android:id="@+id/deleteButton"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"

@@ -21,6 +21,8 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        style="@style/Widget.Material3.Button"
+        android:textSize="17dp"
         android:id="@+id/btnLoginBuyer"
         android:layout_width="171dp"
         android:layout_height="57dp"
@@ -66,6 +68,8 @@
 
 
     <Button
+        style="@style/Widget.Material3.Button"
+        android:textSize="17dp"
         android:id="@+id/btnLoginSeller"
         android:layout_width="167dp"
         android:layout_height="56dp"
