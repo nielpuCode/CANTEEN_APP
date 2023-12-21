@@ -27,6 +27,7 @@
                 app:cardCornerRadius="30dp"
                 app:cardElevation="20dp"
                 android:orientation="vertical">
+<!--                Testing-->
 
                 <!-- Item Menu in each this Linear Layout, we can add this more later on.
                 Jadi setiap List menu yang mereka punya akan display disini dan bisa langsung di edit disini
