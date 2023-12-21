@@ -8,13 +8,14 @@
     tools:context=".Buyer_Page">
 
     <Button
+        android:id="@+id/logoutBuyer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/dark_red_main"
+        android:elevation="20dp"
         android:text="Logout"
         android:textSize="17dp"
         android:textStyle="bold"
-        android:elevation="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.text.TextUtils;
 import android.widget.Toast;
+import android.util.Log;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -50,13 +51,28 @@ public class MainActivity extends AppCompatActivity {
                 } else if (TextUtils.isEmpty(password)) {
                     Toast.makeText(MainActivity.this, "Password must not be empty", Toast.LENGTH_LONG).show();
                 } else {
-                    registerUser(email, password);
-
-                    // When this button is clicked, it will move into the next page
-                    Intent intent = new Intent(MainActivity.this, Buyer_Page.class);
-                    startActivity(intent);
+                    // Check if the user already exists
+                    auth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                            if (task.isSuccessful()) {
+                                SignInMethodQueryResult result = task.getResult();
+                                if (result != null && result.getSignInMethods() != null && result.getSignInMethods().size() > 0) {
+                                    // User already exists, attempt to sign in
+                                    signInUser(email, password);
+                                } else {
+                                    // User does not exist, create a new account and sign in
+                                    registerUser(email, password);
+                                }
+                            } else {
+                                // Handle the exception
+                                Toast.makeText(MainActivity.this, "Failed to check user existence: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
             }
+
         });
 
         //handles login button
@@ -87,31 +103,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //i add if a void class that works if the user hasn't created any account using the current email it automatically registering and signing in but if exists will automatically signing in
-    private void registerUser(String email, String password) {
-        // Check if the user already exists
-        auth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
-            @Override
-            public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
-                if (task.isSuccessful()) {
-                    SignInMethodQueryResult result = task.getResult();
-                    if (result != null && result.getSignInMethods() != null && result.getSignInMethods().size() > 0) {
-                        // User already exists, attempt to sign in
-                        signInUser(email, password);
-                    } else {
-                        // User does not exist, create a new account
-                        createNewAccount(email, password);
-                    }
-                } else {
-                    // Handle the exception
-                    Toast.makeText(MainActivity.this, "Failed to check user existence: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-
-    //i add if a void class that works if the user has created any account using the current email it automatically signing in
-
     private void signInUser(String email, String password) {
         auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -119,25 +110,34 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            navigateToBuyerPage();
                         } else {
                             Toast.makeText(MainActivity.this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            // Log the exception for debugging
+                            Log.e("SignInError", "Error signing in: " + task.getException().getMessage());
                         }
                     }
                 });
     }
 
-    //i add if a void class that works if the user hasn't created any account using the current email it automatically registering and signing in
-    private void createNewAccount(String email, String password) {
+    private void registerUser(String email, String password) {
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(MainActivity.this, "Successfully Registered and Logged In", Toast.LENGTH_SHORT).show();
+                            navigateToBuyerPage();
                         } else {
                             Toast.makeText(MainActivity.this, "Registration Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+    }
+
+    private void navigateToBuyerPage() {
+        // When this button is clicked, it will move into the next page
+        Intent intent = new Intent(MainActivity.this, Buyer_Page.class);
+        startActivity(intent);
     }
 }
