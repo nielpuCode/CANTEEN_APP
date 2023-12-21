@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment_menu_seller">
 
     <LinearLayout
@@ -17,9 +18,14 @@
             android:background="@color/dark_beige_main"
             tools:ignore="UselessParent">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="20dp"
                 android:orientation="vertical">
 
                 <!-- Item Menu in each this Linear Layout, we can add this more later on.
@@ -117,11 +123,12 @@
                                 android:textColorHint="@color/black" />
                         </LinearLayout>
 
+                    </LinearLayout>
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical">
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal">
 
                             <Button
                                 style="@style/Widget.Material3.Button"
@@ -148,10 +155,9 @@
                                 android:textStyle="bold" />
 
                         </LinearLayout>
-                    </LinearLayout>
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </ScrollView>
 
 
