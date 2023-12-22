@@ -129,7 +129,12 @@ public class fragment_menu_seller extends Fragment {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+//        db = FirebaseFirestore.getInstance();
+//        userArrayList = new ArrayList<Menu_List>();
+//        adapterMenu = new Adapter_Menu(fragment_menu_seller.this, userArrayList);
+
         EventChangeListener(db, userArrayList, adapterMenu, progressDialog);
+
 
         return view;
     }
