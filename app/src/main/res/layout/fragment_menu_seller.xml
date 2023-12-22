@@ -6,176 +6,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment_menu_seller">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/light_beige_main"
-        android:orientation="vertical">
+        android:background="@color/dark_beige_main">
+<!--        tools:ignore="UselessParent">-->
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/dark_beige_main"
-            tools:ignore="UselessParent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+<!--            android:background="@color/light_beige_main"-->
 
-            <androidx.cardview.widget.CardView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="20dp"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="20dp"
-                android:orientation="vertical">
+                android:layout_height="650dp" />
 
-
-                <!-- Item Menu in each this Linear Layout, we can add this more later on.
-                Jadi setiap List menu yang mereka punya akan display disini dan bisa langsung di edit disini
-                  tanpa perlu bikin activity baru. TInggal setting loginya aja-->
-
-                <!--Juga setiap LinearLayout terluar dibawah ini mewakili 1 menu.
-                    Tinggal bikin baru lagi aja. Bisa buat di logic javanya.
-                    Nanti bakal ngescroll kok. Kalau gk percaya duplikat aja berkali kali-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp"
-                    android:background="@color/light_beige_main"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <!-- For selecting food image and display the preview -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/uploadImg"
-                            android:layout_width="match_parent"
-                            android:layout_height="180dp"
-                            android:scaleType="fitXY"
-                            android:src="@raw/nasi_goreng"/>
-
-                        <!-- Ini button buat ngetrigger si seller bisa milih gambar dari
-                        galeri HP mereka-->
-                        <Button
-                            style="@style/Widget.Material3.Button"
-                            android:textSize="17dp"
-                            android:id="@+id/btnSelectImage"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:paddingHorizontal="15dp"
-                            android:backgroundTint="@color/dark_beige_main"
-                            android:onClick="onSaveButtonClick"
-                            android:text="SELECT IMAGE"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <EditText
-                            android:id="@+id/foodNameEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:hint="Food Name"
-                            android:padding="5dp"/>
-
-                        <EditText
-                            android:id="@+id/foodPriceEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:hint="Food Price"
-                            android:padding="5dp"/>
-
-                        <EditText
-                            android:id="@+id/variant1EditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:hint="Variant_1"
-                            android:padding="5dp"/>
-
-                        <EditText
-                            android:id="@+id/variant2EditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:hint="Variant_2"
-                            android:padding="5dp"/>
-
-<!--                        <EditText-->
-<!--                            android:id="@+id/"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:hint=""-->
-<!--                            android:minHeight="48dp"-->
-<!--                            android:text="15000"-->
-<!--                            android:textColor="@color/black"-->
-<!--                            android:textColorHint="@color/black" />-->
-
-<!--                        <EditText-->
-<!--                            android:id="@+id/variant1EditText"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:hint="Variant-1"-->
-<!--                            android:minHeight="48dp"-->
-<!--                            android:text="Spicy"-->
-<!--                            android:textColor="@color/black"-->
-<!--                            android:textColorHint="@color/black" />-->
-
-<!--                        <EditText-->
-<!--                            android:id="@+id/variant2EditText"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:hint="Variant_2"-->
-<!--                            android:minHeight="48dp"-->
-<!--                            android:text="Not Spicy"-->
-<!--                            android:textColor="@color/black"-->
-<!--                            android:textColorHint="@color/black" />-->
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:id="@+id/saveButton"
-                                android:textSize="17dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="4dp"
-                                android:backgroundTint="@color/dark_beige_main"
-                                android:onClick="onSaveButtonClick"
-                                android:text="SAVE"
-                                style="@style/Widget.Material3.Button"
-                                android:textStyle="bold" />
-
-                            <Button
-                                style="@style/Widget.Material3.Button"
-                                android:textSize="17dp"
-                                android:id="@+id/deleteButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="4dp"
-                                android:backgroundTint="@color/dark_beige_main"
-                                android:onClick="onDeleteButtonClick"
-                                android:text="DELETE"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-        </ScrollView>
-
-
-
-    </LinearLayout>
+<!--            <Button-->
+<!--                android:id="@+id/deleteButton"-->
+<!--                style="@style/Widget.Material3.Button"-->
+<!--                android:layout_width="118dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="4dp"-->
+<!--                android:backgroundTint="@color/light_beige_main"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:onClick="onDeleteButtonClick"-->
+<!--                android:text="DELETE"-->
+<!--                android:textColor="@color/dark_beige_main"-->
+<!--                android:textSize="17dp"-->
+<!--                android:textStyle="bold" />-->
+        </LinearLayout>
+    </ScrollView>
 
 
 </FrameLayout>

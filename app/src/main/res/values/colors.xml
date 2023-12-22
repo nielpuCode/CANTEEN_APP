@@ -13,6 +13,7 @@
     <color name="dark_red_main">#E74646</color>
     <color name="dark_blue_main">#102C57</color>
     <color name="dark_beige_main">#a68867</color>
+    <color name="nude">#FF8600</color>
     <color name="light_beige_main">#F8F0E5</color>
     <!--    ..................-->
 </resources>

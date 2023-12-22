@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="30dp"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="@color/light_beige_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginVertical="6dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:id="@+id/displayImage"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:src="@raw/ayam_goreng"/>
+
+        </LinearLayout>
+        <!-- For selecting food image and display the preview -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Name : "
+                android:textColor="@color/dark_beige_main"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/displayFoodName"
+                android:layout_marginStart="8dp"
+                android:text="Fried Chicken"
+                android:textColor="@color/dark_beige_main"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Price: "
+                android:textColor="@color/dark_beige_main"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/displayFoodPrice"
+                android:layout_marginStart="8dp"
+                android:text="15000"
+                android:textColor="@color/dark_beige_main"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Variant 1 : "
+                android:textColor="@color/dark_beige_main"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/displayVariant1"
+                android:layout_marginStart="8dp"
+                android:text="Spicy"
+                android:textColor="@color/dark_beige_main"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Variant 2: "
+                android:textColor="@color/dark_beige_main"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/displayVariant2"
+                android:layout_marginStart="8dp"
+                android:text="Fried Chicken"
+                android:textColor="@color/dark_beige_main"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <Button
+                android:id="@+id/deleteButton"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="118dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:backgroundTint="@color/dark_beige_main"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onDeleteButtonClick"
+                android:text="DELETE"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

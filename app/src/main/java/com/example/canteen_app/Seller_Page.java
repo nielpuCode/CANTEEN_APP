@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class Seller_Page extends AppCompatActivity {
 
-    Button btnMenuBuyer, btnOrderBuyer, btnAddMenuSeller;
+    Button btnMenuBuyer, btnOrderBuyer, btnAddMenuSeller, btnLogOut;
     Fragment menuFragment, orderFragment;
 
     @Override
@@ -19,6 +19,7 @@ public class Seller_Page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller_page);
 
+        btnLogOut = findViewById(R.id.btnLogOut);
         btnMenuBuyer = findViewById(R.id.btnMenuSeller);
         btnOrderBuyer = findViewById(R.id.btnOrderSeller);
         btnAddMenuSeller = findViewById(R.id.btnAddMenuSeller);
@@ -52,6 +53,14 @@ public class Seller_Page extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Seller_Page.this, Add_Menu_Seller.class);
                 startActivity(intent);
+            }
+        });
+
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(Seller_Page.this, MainActivity.class);
+                startActivity(intent2);
             }
         });
     }

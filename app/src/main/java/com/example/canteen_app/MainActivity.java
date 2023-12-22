@@ -85,19 +85,21 @@ public class MainActivity extends AppCompatActivity {
                 String password = usPassword.getText().toString();
 
                 if (email.equals("admin@gmail.com") || password.equals("admin123")){
-                    if (TextUtils.isEmpty(email)) {
-                        Toast.makeText(MainActivity.this, "Email must not be empty", Toast.LENGTH_LONG).show();
-                    } else if (TextUtils.isEmpty(password)) {
-                        Toast.makeText(MainActivity.this, "Password must not be empty", Toast.LENGTH_LONG).show();
-                    } else{
-                        registerOrSignInUser(email, password);
-
-                        // Move the intent inside the successful registration block
-                        // When this button is clicked, it will move into the next page
-                        Intent intent = new Intent(MainActivity.this, Seller_Page.class);
-                        startActivity(intent);
-                    }
+                    navigateToSellerPage();
+                } else if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(MainActivity.this, "Email must not be empty", Toast.LENGTH_LONG).show();
+                } else if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(MainActivity.this, "Password must not be empty", Toast.LENGTH_LONG).show();
                 }
+//                else{
+//                        registerOrSignInUser(email, password);
+
+                    // Move the intent inside the successful registration block
+                    // When this button is clicked, it will move into the next page
+//                        navigateToSellerPage();
+//                        Intent intent = new Intent(MainActivity.this, Seller_Page.class);
+//                        startActivity(intent);
+//                }
                 else
                     Toast.makeText(MainActivity.this, "U have not been registered as employee by the company", Toast.LENGTH_SHORT).show();
 
@@ -105,7 +107,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // checks if user's accoutn is not yet registered, the user's account will be registered and the user is directed to the main menu
+    private void navigateToSellerPage() {
+        Intent intent = new Intent(MainActivity.this, Seller_Page.class);
+        startActivity(intent);
+    }
+
+    // checks if user's account is not yet registered, the user's account will be registered and the user is directed to the main menu
     private void registerOrSignInUser(String email, String password) {
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -122,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    // checks if user's accoutn is already registered, the userr will be directed to the main menu
+    // checks if user's account is already registered, the user will be directed to the main menu
     private void signInUser(String email, String password) {
         auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
