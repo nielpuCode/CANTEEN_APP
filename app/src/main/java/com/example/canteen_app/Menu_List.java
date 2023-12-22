@@ -53,44 +53,4 @@ public class Menu_List {
     public void setDataVariant_2(String dataVariant_2) {
         this.dataVariant_2 = dataVariant_2;
     }
-
-    //    public Menu_List(String dataFoodName, String dataFoodPrice, String dataImage, String dataVariant_1, String dataVariant_2) {
-//        this.dataFoodName = dataFoodName;
-//        this.dataFoodPrice = dataFoodPrice;
-//        this.dataImage = dataImage;
-//        this.dataVariant_1 = dataVariant_1;
-//        this.dataVariant_2 = dataVariant_2;
-//    }
-//
-//    public String getDataFoodName() {
-//        return dataFoodName;
-//    }
-//
-//    public void setDataFoodName(String dataFoodName) {
-//        this.dataFoodName = dataFoodName;
-//    }
-//
-//    public String getDataFoodPrice() {
-//        return dataFoodPrice;
-//    }
-//
-//    public void setDataFoodPrice(String dataFoodPrice) {
-//        this.dataFoodPrice = dataFoodPrice;
-//    }
-//
-//    public String getDataVariant_1() {
-//        return dataVariant_1;
-//    }
-//
-//    public void setDataVariant_1(String dataVariant_1) {
-//        this.dataVariant_1 = dataVariant_1;
-//    }
-//
-//    public String getDataVariant_2() {
-//        return dataVariant_2;
-//    }
-//
-//    public void setDataVariant_2(String dataVariant_2) {
-//        this.dataVariant_2 = dataVariant_2;
-//    }
 }

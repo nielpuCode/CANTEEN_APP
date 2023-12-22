@@ -36,18 +36,20 @@ public class Adapter_Menu extends RecyclerView.Adapter<Adapter_Menu.MenuViewHold
     @Override
     public void onBindViewHolder(@NonNull Adapter_Menu.MenuViewHolder holder, int position) {
 
-        Menu_List user = userArrayList.get(position);
+        Menu_List menu = userArrayList.get(position);
 
         // Assuming dataImage is a URL or image resource identifier
         // Load image into ImageView using Glide
         Glide.with(context)
-                .load(user.dataImage) // Provide the URL or resource identifier here
+                .load(menu.dataImage) // Provide the URL or resource identifier here
+                .placeholder(R.raw.the_logo) // Placeholder image while loading
+                .error(R.raw.upload_image) // Image to display if loading fails
                 .into(holder.foodImage);
 
-        holder.foodName.setText(user.dataFoodName);
-        holder.foodPrice.setText(user.dataFoodPrice);
-        holder.variant1.setText(user.dataVariant_1);
-        holder.variant2.setText(user.dataVariant_2);
+        holder.foodName.setText(menu.dataFoodName);
+        holder.foodPrice.setText(menu.dataFoodPrice);
+        holder.variant1.setText(menu.dataVariant_1);
+        holder.variant2.setText(menu.dataVariant_2);
     }
 
     @Override
