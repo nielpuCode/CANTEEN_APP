@@ -15,6 +15,9 @@
         android:theme="@style/Theme.CANTEEN_APP"
         tools:targetApi="31">
         <activity
+            android:name=".Buyer_Menu_List"
+            android:exported="false" />
+        <activity
             android:name=".Add_Menu_Seller"
             android:exported="false" />
         <activity

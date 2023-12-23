@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 String email = usEmail.getText().toString();
                 String password = usPassword.getText().toString();
 
-                if (email.equals("admin@gmail.com") || password.equals("admin123")){
+                if (email.equals("admin@gmail.com") && password.equals("admin123")){
                     navigateToSellerPage();
                 } else if (TextUtils.isEmpty(email)) {
                     Toast.makeText(MainActivity.this, "Email must not be empty", Toast.LENGTH_LONG).show();
