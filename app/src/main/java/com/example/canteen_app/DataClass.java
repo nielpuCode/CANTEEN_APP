@@ -44,6 +44,7 @@ public class DataClass {
         this.dataVariant_2 = dataVariant_2;
     }
 
+//
     public String getDataImage() {
         return dataImage;
     }

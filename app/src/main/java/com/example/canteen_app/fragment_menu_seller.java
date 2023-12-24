@@ -109,6 +109,7 @@ public class fragment_menu_seller extends Fragment {
         }
     }
 
+//
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

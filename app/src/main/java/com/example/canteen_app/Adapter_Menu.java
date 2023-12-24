@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class Adapter_Menu extends RecyclerView.Adapter<Adapter_Menu.MenuViewHolder> {
-
+//
     Context context;
     ArrayList<Menu_List> userArrayList;
 

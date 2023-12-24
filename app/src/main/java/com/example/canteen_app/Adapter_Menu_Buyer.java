@@ -105,7 +105,7 @@ public class Adapter_Menu_Buyer extends RecyclerView.Adapter<Adapter_Menu_Buyer.
 
             FirebaseAuth auth = FirebaseAuth.getInstance();
             FirebaseUser currentUser = auth.getCurrentUser();
-
+//
             if (currentUser!=null) {
                 String userEmail = currentUser.getEmail();
 

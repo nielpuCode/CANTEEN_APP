@@ -99,6 +99,7 @@ public class Add_Menu_Seller extends AppCompatActivity {
                         uploadData();
                         dialog.dismiss();
                     }
+//
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
