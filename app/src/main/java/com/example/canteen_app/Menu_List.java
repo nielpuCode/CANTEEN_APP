@@ -3,15 +3,18 @@ package com.example.canteen_app;
 public class Menu_List {
 
     String dataImage, dataFoodName, dataFoodPrice, dataVariant_1, dataVariant_2;
+    int quantity; // New field to store the quantity
+
 
     public Menu_List(){}
 
-    public Menu_List(String dataImage, String dataFoodName, String dataFoodPrice, String dataVariant_1, String dataVariant_2) {
+    public Menu_List(String dataImage, String dataFoodName, String dataFoodPrice, String dataVariant_1, String dataVariant_2, int quantity) {
         this.dataImage = dataImage;
         this.dataFoodName = dataFoodName;
         this.dataFoodPrice = dataFoodPrice;
         this.dataVariant_1 = dataVariant_1;
         this.dataVariant_2 = dataVariant_2;
+        this.quantity = quantity; // Initialize quantity to 0 when a Menu_List object is created
     }
 
     public String getDataImage() {
@@ -52,5 +55,13 @@ public class Menu_List {
 
     public void setDataVariant_2(String dataVariant_2) {
         this.dataVariant_2 = dataVariant_2;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

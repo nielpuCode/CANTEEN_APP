@@ -43,8 +43,8 @@ public class Adapter_Menu extends RecyclerView.Adapter<Adapter_Menu.MenuViewHold
         // Load image into ImageView using Glide
         Glide.with(context)
                 .load(menu.dataImage) // Provide the URL or resource identifier here
-                .placeholder(R.raw.the_logo) // Placeholder image while loading
-                .error(R.raw.upload_image) // Image to display if loading fails
+                .placeholder(R.drawable.the_logo) // Placeholder image while loading
+                .error(R.drawable.upload_image) // Image to display if loading fails
                 .into(holder.foodImage);
 
         holder.foodName.setText(menu.dataFoodName);

@@ -3,41 +3,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment_menu_seller">
+    android:background="@color/dark_beige_main"
+    tools:context=".Fragment_Menu_Buyer">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/dark_beige_main">
-        <!--        tools:ignore="UselessParent">-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <!--            android:background="@color/light_beige_main"-->
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+                android:id="@+id/recyclerViewBuyer"
                 android:layout_width="match_parent"
                 android:layout_height="650dp" />
 
-            <!--            <Button-->
-            <!--                android:id="@+id/deleteButton"-->
-            <!--                style="@style/Widget.Material3.Button"-->
-            <!--                android:layout_width="118dp"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_margin="4dp"-->
-            <!--                android:backgroundTint="@color/light_beige_main"-->
-            <!--                android:layout_gravity="center_horizontal"-->
-            <!--                android:onClick="onDeleteButtonClick"-->
-            <!--                android:text="DELETE"-->
-            <!--                android:textColor="@color/dark_beige_main"-->
-            <!--                android:textSize="17dp"-->
-            <!--                android:textStyle="bold" />-->
+<!--            &lt;!&ndash; Item Menu Tiap Linear Layout, Nanti tinggal di tambah aja &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="203dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:background="@color/light_beige_main"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:padding="16dp">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_marginEnd="16dp"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:src="@raw/nasi_goreng" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="232dp"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Nasi Goreng"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textSize="28sp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:text="Rp15.000"-->
+<!--                        android:textColor="@color/dark_red_main"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    &lt;!&ndash; Opsi pedas atau tidak &ndash;&gt;-->
+<!--                    <RadioGroup-->
+<!--                        android:id="@+id/radioGroupSpicy"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="33dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginBottom="8dp"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <RadioButton-->
+<!--                            android:id="@+id/radioSpicy"-->
+<!--                            android:layout_width="109dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:buttonTint="@android:color/black"-->
+<!--                            android:text="Spicy"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            tools:ignore="TouchTargetSizeCheck" />-->
+
+<!--                        <RadioButton-->
+<!--                            android:id="@+id/radioNotSpicy"-->
+<!--                            android:layout_width="109dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:buttonTint="@android:color/black"-->
+<!--                            android:text="Not Spicy"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            tools:ignore="TouchTargetSizeCheck" />-->
+<!--                    </RadioGroup>-->
+
+<!--                    &lt;!&ndash; Tombol "add" &ndash;&gt;-->
+<!--                    <Button-->
+<!--                        style="@style/Widget.Material3.Button"-->
+<!--                        android:textSize="17dp"-->
+<!--                        android:id="@+id/btnAdd"-->
+<!--                        android:layout_width="158dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:onClick="onAddButtonClick"-->
+<!--                        android:text="Add"-->
+<!--                        android:backgroundTint="@color/dark_beige_main"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+
+
         </LinearLayout>
     </ScrollView>
-
 
 </FrameLayout>
